@@ -3,6 +3,8 @@ package com.infinitybyteleague.app.model;
 import java.sql.Date;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -29,7 +31,8 @@ public class Pago {
     private String folioFactura;
 
     @ManyToOne
-    @JoinColumn(name = "pedido_id_pedido", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "pedido_id_pedido")
     private Pedido pedido;
 
     // Constructor vacío para JPA
@@ -56,11 +59,11 @@ public class Pago {
 		this.idPago = idPago;
 	}
 
-	public java.sql.Date getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(java.sql.Date fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 

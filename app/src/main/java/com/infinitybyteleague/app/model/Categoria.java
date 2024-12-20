@@ -1,10 +1,16 @@
 package com.infinitybyteleague.app.model;
 
-import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 
 @Entity
@@ -13,7 +19,7 @@ public class Categoria {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
-    private int idCategoria;
+    private Integer idCategoria;
 
     @Column(name = "nombre", length = 45, nullable = false)
     private String nombreCat;
@@ -28,28 +34,28 @@ public class Categoria {
     	
     }
 
-	public Categoria(int idCategoria, String nombre, String descripcion, List<Producto> productos) {
+	public Categoria(Integer idCategoria, String nombreCat, String descripcion, List<Producto> productos) {
 		super();
 		this.idCategoria = idCategoria;
-		this.nombreCat = nombre;
+		this.nombreCat = nombreCat;
 		this.descripcion = descripcion;
 		this.productos = productos;
 	}
 
-	public int getIdCategoria() {
+	public Integer getIdCategoria() {
 		return idCategoria;
 	}
 
-	public void setIdCategoria(int idCategoria) {
+	public void setIdCategoria(Integer idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 
-	public String getNombre() {
+	public String getNombreCat() {
 		return nombreCat;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombreCat = nombre;
+	public void setNombreCat(String nombreCat) {
+		this.nombreCat = nombreCat;
 	}
 
 	public String getDescripcion() {
@@ -82,16 +88,18 @@ public class Categoria {
 		if (getClass() != obj.getClass())
 			return false;
 		Categoria other = (Categoria) obj;
-		return Objects.equals(descripcion, other.descripcion) && idCategoria == other.idCategoria
+		return Objects.equals(descripcion, other.descripcion) && Objects.equals(idCategoria, other.idCategoria)
 				&& Objects.equals(nombreCat, other.nombreCat) && Objects.equals(productos, other.productos);
 	}
 
 	@Override
 	public String toString() {
-		return "Categoria [idCategoria=" + idCategoria + ", nombre=" + nombreCat + ", descripcion=" + descripcion
+		return "Categoria [idCategoria=" + idCategoria + ", nombreCat=" + nombreCat + ", descripcion=" + descripcion
 				+ ", productos=" + productos + "]";
 	}
-    
+	
+	
+	
    
 }
 

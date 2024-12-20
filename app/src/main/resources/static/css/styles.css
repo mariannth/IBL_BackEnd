@@ -1,0 +1,1209 @@
+/* -----Importar fuente Codec Pro -----*/
+@import url('https://fonts.googleapis.com/css2?family=Codec+Pro:wght@400;600&display=swap');
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Elimina cualquier fondo de todos los elementos globales */
+}
+
+/*----- Estilos para body ------*/
+/* Estilo para el cuerpo con un gradiente animado */
+body {
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            #020f1f,
+            #112444,
+            #0e4761,
+            #0a2673,
+            #1b3c56,
+            #1d5a88e6,
+            #7b99b5,
+            #00c2ff,
+            #20e5f6,
+            #50c878,
+            #ffffff);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Ajustes globales */
+html,
+body {
+    margin: 0;
+
+    /*overflow: default; /*Evita que el fondo se salga del viewport */
+}
+
+/* Contenedor de fondo animado */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #020f1f;
+    /* Fondo base */
+    overflow: hidden;
+    z-index: -1;
+    /* Ubicar detrás del contenido principal */
+}
+
+/* Estilo de las estrellas */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: moveStars 5s linear infinite;
+}
+
+/* Animación de movimiento de estrellas */
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Contenido principal */
+.content {
+    position: relative;
+    z-index: 1;
+    /* Ubicar contenido encima del fondo */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #000a63;
+}
+
+form {
+    /* background: rgba(255, 255, 255, 0.8); */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.p_pag {
+    color: #00c2ff;
+    text-align: justify;
+}
+
+.p_contactanos {
+    color: #00c2ff;
+    text-align: center;
+}
+
+.modal_title {
+    color: #000a63;
+}
+
+/* -----Estilos para la Navbar o menú -----*/
+.navbar {
+    background-color: #000a63;
+    background-color: #020f1f !important;
+
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    color: #20e5f6 !important;
+}
+
+.nav-link:hover {
+    color: #00c2ff !important;
+}
+
+.navbar-brand {
+    font-family: 'Codec Pro', sans-serif;
+    color: #20e5f6 !important;
+}
+
+.navbar-toggler {
+    border-color: #20e5f6;
+}
+
+.dropdown-menu {
+    background-color: #282120;
+}
+
+.dropdown-item {
+    color: #ffffff;
+}
+
+.dropdown-item:hover {
+    background-color: #00c2ff;
+    color: #020f1f;
+}
+
+
+/* -----Estilos para el footer -----*/
+footer {
+    background-color: #000a63;
+}
+
+/*Footer RS*/
+.social-icon {
+    display: inline-flexbox;
+    width: 40px;
+    height: 40px;
+    background-color: #00c2ff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    /* Para centrar el icono */
+    transition: background-color 0.3s;
+}
+
+.social-icon i {
+    color: white;
+    font-size: 20px;
+    /* Ajusta el tamaño del ícono */
+}
+
+.social-icon:hover {
+    background-color: #0077B5;
+}
+
+/* Colores específicos para cada red social */
+.facebook:hover {
+    background-color: #020f1f;
+}
+
+.instagram:hover {
+    background-color: #020f1f;
+}
+
+.footer {
+    background-color: #020f1f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #00c2ff;
+    /* Azul del logo */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de redes sociales */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Estilos de los íconos de redes sociales footer */
+.social-media {
+    display: inline-block;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #282120;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Efecto hover para los íconos */
+.social-icon:hover {
+    background-color: #4CAF50;
+    /* Color verde cuando el icono es hover */
+}
+
+/* Colores específicos para cada red social */
+.facebook:hover {
+    background-color: #3b5998;
+}
+
+.instagram:hover {
+    background-color: #E4405F;
+}
+
+/* Inicia index */
+
+/*Saltos de linea*/
+hr {
+    margin: 0.2px 0;
+    border-top: 5px solid #00c2ff;
+}
+
+
+/* Boton configuracion global
+- Boton banner */
+button.normal {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px 20px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 70px;
+    cursor: pointer;
+    border: #0077B5 solid;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Boton dentro de heroe - redirecciona "acerca de" */
+#conocenosBtn {
+    padding: 10px 60px 10px 65px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 25px;
+    cursor: pointer; 
+    border: ridge;
+    background-repeat: no-repeat;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Sub class hover/Efectos en el botón*/
+#conocenosBtn button:hover {
+    background-color: #20e4f67a;
+    color: white;
+}
+
+/* Configuracion mensaje de bienvenida */
+#heroe {
+    background-image: url("/src/img/productos/img_Jluis/petlogo.jpg");
+    width: 100%;
+    height: 500px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+/*
+#heroe h4 {
+    padding-bottom: 15px;
+    color: #ffffff;
+    font-size: 2.5em;
+}
+*/
+/*
+#heroe h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 4rem;
+}
+*/
+/* #heroe h2 {
+    color: #ffffff;
+}
+*/
+
+
+/* Contenedor de la imagen */
+#petlogo {
+    width: 100%;               
+    max-width: 600px;           
+    height: auto;               
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    margin: 0 auto;             
+    background-color: #ffffff;     
+}
+
+#petlogo img {
+    width: 100%;                
+    height: auto;               
+    object-fit: contain;       
+}
+
+/* Boton Conocenos */
+button.normal {
+    padding: 10px 60px 10px 65px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    border: ridge;
+    background-repeat: no-repeat;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+button.normal:hover {
+    background-color: #20e4f6da;
+    color: #1b3c56;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px #00c2ff;
+    border-color: #50c878;
+}
+
+.index-h1 {
+    color: white;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 4rem;
+    background-color: #0077B5; 
+    padding: 20px;  
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center;  
+}
+
+/* Diseño de la tarjeta de producto */
+.index-product-grid {
+    border: 2px solid #00c2ff;
+    border-radius: 20px;
+    background-color: #050c2e;
+    color: #20e5f6;
+    transition: transform 0.3s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.index-product-card {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: #050c2e;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-style: groove;
+    border-color: #0077B5;
+}
+
+.index-product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 30px;
+    grid-row: 1; 
+    margin-top: top;
+}
+
+.index-product-card h2 {
+    font-size: 20px;
+    margin: 15px 0;
+    color: #fff9e1;
+}
+
+.index-product-card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #50c878;
+    grid-row: 3; 
+    margin-top: auto;
+}
+
+.index-product-card button {
+    background-color: #4CAF50;
+    border-color: #b1fffc;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    grid-row: 4; 
+    margin-top: auto;
+}
+
+.index-product-card button:hover {
+    background-color: #20e5f6;
+}
+
+.index-product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Seccion index card*/
+.index-card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    margin: 70px 0;
+}
+
+.index-card img {
+    width: 100%;
+    height: auto;
+}
+
+.index-card h3 {
+    font-size: 40px;
+    margin: 20px 0;
+    color: white;
+    text-align: center; 
+}
+
+.index-card p {
+    font-size: 30px;
+    margin: 20px 0;
+    color: white;
+    text-align: justify; 
+}
+
+/* Termina index */
+
+
+/* -----CSS para formularios -----*/
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    color: #b1fffc;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #fff9e1;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container_login {
+    background-color: #495057;
+    /* background: rgb(255, 255, 255); */
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgb(62, 175, 240);
+}
+
+.container {
+    background: #010523;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* -----CSS para la pag sobre nosotros----- */
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.card {
+    min-height: 350px;
+    /* Ajusta según tu diseño */
+}
+
+/* Efecto de hover para imágenes */
+.hover-image {
+    width: 100%;
+    /* Las imágenes se ajustan al ancho del contenedor */
+    height: 200px;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Asegura que las imágenes mantengan su proporción */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-image:hover {
+    transform: scale(1.1);
+}
+
+
+#Acerca {
+    background-color: #ffffff;
+    color: #00eeffdc;
+    text-align: center;
+}
+
+#Acerca .container {
+    padding: 20px 0px;
+}
+
+#Acerca h1 {
+    margin-top: 0;
+    font-size: 3.2em;
+    color: #000a63;
+}
+
+#Acerca p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: left;
+}
+
+#Acerca .carta {
+    background-position: center center;
+    background-size: cover;
+    padding: 70px;
+    margin: 20px;
+    border-radius: 25px;
+
+}
+
+.carta:first-child {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url("./src/img/nosotros/mision.jpg");
+}
+
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url("./src/img/nosotros/vision.jpeg");
+}
+
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)), url("./src/img/nosotros/valores.jpeg");
+}
+  
+/* -----CSS para contáctanos----*/
+
+#contactanos {
+    color: #ffffff;
+}
+
+#dejanosDatos {
+    color: #20e5f6;
+}
+
+.card_contact {
+    min-height: 350px;
+    border: 1px solid #00c2ff;
+    border-radius: 8px;
+    background-color: #050c2e;
+    color: #20e5f6;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0    auto;
+    margin-left: 200px;
+    padding: 20px;
+}
+#formContact {
+    background: rgba(2, 8, 45, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-decoration-color: #20e5f6;
+    border-color: #20e5f6;
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-label {
+    color: #00c2ff
+}
+
+.form-control {
+    background-color: #ffffff;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    max-height: fit-content;
+    
+}
+
+#terms {
+    padding-left: 13px;
+}
+
+.form-check-label {
+    margin-right: 190px;
+    color: #20e5f6; 
+}
+
+#mapaIBL iframe {
+    flex-wrap:wrap;
+    flex-grow:initial;
+    flex-shrink:unset;
+    display: grid;
+    object-position: right;
+    position: relative;
+
+    width: 660px;
+    height: 350px;
+
+    width: 500px;
+    height: 300px;
+
+    border: 0;
+}
+
+#service{
+   padding-left: 15px;
+   max-height: 100px;
+   min-height: 8px;
+   padding-bottom: 3px;
+}
+
+#Campos-obligatorios{
+    position: relative;
+    padding-right: 370px;
+}
+
+/**/
+  
+  /* Página Responsiva */
+ /* @media (min-width: 768px) {
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    section {
+      flex: 1 0 40%;
+      padding: 10px;
+    }
+  
+    #contact_form {
+      flex: 1 0 60%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    section {
+      order: 1;
+    }
+  
+    #contact_form {
+      order: 2;
+    }
+  }
+  
+  #mapaIBL iframe {
+    width: 100%;
+    height: 300px;
+    border:#50c878;
+  }
+*/
+
+/* -----CSS para el panel de productos----- */
+/*Productos*/
+/* Estilo para la sección de filtros */
+.filters {
+    border: 1px solid #00c2ff;
+    border-radius: 8px;
+    background-color: #050c2e;
+    /* background-color:#ffffff; */
+    color: #20e5f6;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* .filters {
+    padding: 20px;
+    text-align: center;
+    background-color:#ffffff;
+} */
+
+.filters select {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-top: 10px;
+
+}
+
+/* Estilo para la cuadrícula de productos */
+.product-grid {
+    border: 1px solid #00c2ff;
+    border-radius: 8px;
+    background-color: #050c2e;
+    color: #20e5f6;
+    transition: transform 0.3s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Diseño de la tarjeta de producto */
+.product-card {
+    background-color: #050c2e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+} */
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    /* Ajusta la altura según lo necesites */
+    object-fit: contain;
+    /* Asegura que toda la imagen sea visible */
+    background-color: #fff;
+    /* Opcional: color de fondo para los márgenes */
+    border-radius: 8px;
+}
+
+
+.product-card h2 {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.product-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #20e5f6;
+}
+
+.product-card button {
+    background-color: #0a0063;
+    border-color: #20e5f6;
+    /* background-color: #f68e56; */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #20e5f6;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+
+/* -----CSS para el carrito----- */
+
+/* Tabla */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    color: #20e5f6;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    color: #20e5f6;
+}
+
+.thead-dark th {
+    background-color: #000a63;
+    color: #20e5f6;
+}
+
+/* Botones */
+.btn {
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #00c2ff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #000a63;
+}
+
+.btn-danger {
+    background-color: #ff3b3b;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Tarjetas de productos */
+.card {
+    border: 1px solid #00c2ff;
+    border-radius: 8px;
+    background-color: #050c2e;
+    color: #20e5f6;
+    transition: transform 0.3s ease;
+    justify-content: center;
+}
+
+.card_contact {
+    min-height: 350px;
+    ;
+    border: 1px solid #00c2ff;
+    border-radius: 8px;
+    background-color: #050c2e;
+    color: #20e5f6;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    max-width: 650px;
+    margin: 20px auto;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-title {
+    color: #00c2ff;
+    font-family: 'Codec Pro', sans-serif;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #20e5f6;
+    font-family: 'Codec Pro', sans-serif;
+}
+
+#vaciar-carrito {
+    font-size: 14px;
+    background-color: #ff3b3b;
+    border: none;
+    color: #282120;
+}
+
+#vaciar-carrito:hover {
+    background-color: #c82333;
+}
+
+/* -----CSS para productos (antes servicios)----- */
+/*Productos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #020f1f;
+}
+
+/* Contenedor de productos */
+.productos {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00c2ff;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Lista de servicios */
+.servicios {
+    flex: 1 1 200px;
+}
+
+.lista-servicios {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-servicios li {
+    margin-bottom: 10px;
+}
+
+.servicio-btn {
+    padding: 12px;
+    background-color: #00c2ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.servicio-btn:hover {
+    background-color: #20e5f6;
+}
+
+/* Detalle de cada servicio */
+.detalle-servicio {
+    flex: 2 1 600px;
+}
+
+.servicio-info {
+    display: none;
+    /* Ocultar todos los detalles por defecto */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.servicio-imagen {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el precio (superior derecho) */
+.precio {
+    font-size: 1.5em;
+    color: #333;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/* Justificar el texto y alinearlo a la izquierda */
+.descripcion {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el botón */
+.agregar-carrito {
+    padding: 12px;
+    background-color: #00c2ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.agregar-carrito:hover {
+    background-color: #20e5f6;
+}
+
+/* Mostrar servicio activo */
+.servicio-info.active {
+    display: block;
+}
+
+
+
+
+
+/* -----Estilos generales para pantallas pequeñas ----- */
+@media (max-width: 600px) {
+
+    /* Ajustar las cajas para que ocupen toda la pantalla */
+    .caja-texto,
+    .caja-derecha-img,
+    .caja-reverse-texto,
+    .caja-reverse-img,
+    .caja-mapa {
+        flex: 1 1 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Media Query para móviles */
+    @media (max-width: 768px) {
+        .social-media {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    /* Imágenes ajustadas al ancho completo del contenedor en pantallas pequeñas */
+    .caja-derecha-img img,
+    .caja-reverse-img img,
+    .caja-mapa iframe {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+}
+
+/* Estilos para dispositivos pequeños (móviles) */
+/* Media Query para móviles */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .servicios,
+    .detalle-servicio {
+        flex: 1 1 100%;
+    }
+
+    .servicio-btn {
+        font-size: 16px;
+    }
+
+    .servicio-info {
+        margin-top: 10px;
+    }
+}
+
+/* Estilos para dispositivos muy pequeños (pantallas de 480px o menos) */
+@media (max-width: 480px) {
+    .servicio-btn {
+        font-size: 14px;
+    }
+}
+
+
+h1 {
+    color: #00c2ff;
+    font-weight: bold;
+}
+
+h2 {
+    color: #00c2ff;
+
+}
+
+button {
+    background-color: #000a63;
+    border-color: #20e5f6;
+}
+
+button:hover {
+    background-color: #282120;
+}
+
+/* Secciones y contenido */
+section {
+    padding: 60px 0;
+    margin-top: 70px;
+}
+
+/* Estilos para animación al hacer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (min-width: 800px) {
+    header.container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #Acerca .Nosotros {
+        display: flex;
+        justify-content: center;
+    }
+
+    #Acerca .p {
+        display: block;
+    }
+
+    #Acerca .carta {
+        padding: 50px;
+    }
+}

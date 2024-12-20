@@ -1,7 +1,11 @@
 package com.infinitybyteleague.app.model;
 
 import jakarta.persistence.*;
+
+import java.util.List;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "estados")
@@ -16,16 +20,25 @@ public class Estado {
     private String nombreEstado;
 
     @ManyToOne
-    @JoinColumn(name = "paises_id_pais", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "paises_id_pais")
     private Pais pais;
+
+    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL)
+    private List<Municipio> municipios;
+
+    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL)
+    private List<Usuario> usuarios;
 
     public Estado() {}
 
-	public Estado(int idEstado, String nombreEstado, Pais pais) {
+	public Estado(int idEstado, String nombreEstado, Pais pais, List<Municipio> municipios, List<Usuario> usuarios) {
 		super();
 		this.idEstado = idEstado;
 		this.nombreEstado = nombreEstado;
 		this.pais = pais;
+		this.municipios = municipios;
+		this.usuarios = usuarios;
 	}
 
 	public int getIdEstado() {
@@ -50,6 +63,22 @@ public class Estado {
 
 	public void setPais(Pais pais) {
 		this.pais = pais;
+	}
+
+	public List<Municipio> getMunicipios() {
+		return municipios;
+	}
+
+	public void setMunicipios(List<Municipio> municipios) {
+		this.municipios = municipios;
+	}
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	@Override

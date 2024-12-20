@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PaisRepository extends JpaRepository<Pais, Integer> {
-	@Query("SELECT u FROM Pais u WHERE u.nombre_pais = ?1")
-	Pais findByPais(String nombrePais);
+     // Buscar país por nombre
+	    @Query("SELECT p FROM Pais p WHERE p.nombrePais = ?1")
+	    Pais findByNombrePais(String nombrePais);
 }

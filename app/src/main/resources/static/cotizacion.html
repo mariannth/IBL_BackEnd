@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra - IBL</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"
+        integrity="sha512-K6I4HO1D+E1SVzzBc7C8uV35HlXk5sZfztSzX3LTGtF2/B0IUy5yKZ9zT/8GrdyxEs5XHP1yI9fRQafZfiFZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+    <div id="header"></div>
+    <main class="flex-grow-1">
+        <div class="container my-5"><!-- Contenedor principal centrado -->
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1 class="text-center mb-4">Formulario de Cotización</h1>
+
+                    <!-- Empieza formulario -->
+                    <form id="appointment-form">
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" id="name" name="user_name" class="form-control">
+                        </div>
+
+                        <!-- Correo electrónico -->
+                        <div class="mb-3">
+                            <label for="mail" class="form-label">Correo electrónico</label>
+                            <input type="email" id="mail" name="user_mail" class="form-control">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Teléfono</label>
+                            <input type="tel" id="phone" name="number_phone" class="form-control">
+                        </div>
+
+                        <!-- Selección de servicios -->
+                        <div class="mb-3">
+                            <label for="seleccion" class="form-label">Selecciona uno de nuestros servicios</label>
+                            <select id="seleccion" class="form-select">
+                                <option value="" selected>Seleccione una opción</option>
+                                <option value="web">Desarrollo de páginas web</option>
+                                <option value="app">Desarrollo de aplicaciones</option>
+                                <option value="consulting">Consultoría</option>
+                            </select>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div class="mb-3">
+                            <label for="msg" class="form-label">Mensaje</label>
+                            <textarea id="msg" name="user_message" class="form-control"></textarea>
+                        </div>
+
+                        <!-- Fecha de cotización -->
+                        <div class="mb-3">
+                            <label for="appointment-date" class="form-label">Selecciona una fecha</label>
+                            <input type="date" id="appointment-date" name="appointment_date" class="form-control"
+                                required>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="reset" class="btn btn-secondary">Regresar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </main>
+
+    <!--Footer-->
+    <div id="footer"></div>
+    <script>
+        function loadComponent(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(id).innerHTML = data)
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        loadComponent("header", "./components/header.html");
+        loadComponent("footer", "./components/footer.html");
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

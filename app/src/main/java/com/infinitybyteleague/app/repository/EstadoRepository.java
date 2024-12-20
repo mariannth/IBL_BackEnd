@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EstadoRepository extends JpaRepository<Estado, Integer> {
-	
-	@Query("SELECT u FROM estados u WHERE u.nombre_estados = ?1")
-	Estado findByEstado(String nombreEstado);
+    // Buscar estado por nombre
+	@Query("SELECT e FROM Estado e WHERE e.nombreEstado = ?1")
+    Estado findByEstado(String nombreEstado);
 }
-

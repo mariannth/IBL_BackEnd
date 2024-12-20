@@ -1,5 +1,6 @@
 package com.infinitybyteleague.app.model;
 
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.*;
@@ -41,16 +42,19 @@ public class Usuario {
 	private String tipoUsuario;
 
 	@ManyToOne
-	@JoinColumn(name = "paises_id_pais", nullable = false)
-	private Pais pais;
+    @JoinColumn(name = "paises_id_pais")
+    private Pais pais;
 
-	@ManyToOne
-	@JoinColumn(name = "estados_id_estados", nullable = false)
-	private Estado estado;
+    @ManyToOne
+    @JoinColumn(name = "estados_id_estados")
+    private Estado estado;
 
-	@ManyToOne
-	@JoinColumn(name = "municipios_id_municipios", nullable = false)
-	private Municipio municipio;
+    @ManyToOne
+    @JoinColumn(name = "municipios_id_municipios")
+    private Municipio municipio;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Pedido> pedidos;
 
 	// Constructor vacío para JPA
 	public Usuario() {
@@ -58,7 +62,7 @@ public class Usuario {
 
 	public Usuario(int idUsuario, String nombre, String apellidoMaterno, String apellidoPaterno, String email,
 			String password, String telefono, String direccion, String rfc, String tipoUsuario, Pais pais,
-			Estado estado, Municipio municipio) {
+			Estado estado, Municipio municipio, List<Pedido> pedidos) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nombre = nombre;
@@ -73,6 +77,7 @@ public class Usuario {
 		this.pais = pais;
 		this.estado = estado;
 		this.municipio = municipio;
+		this.pedidos = pedidos;
 	}
 
 	public int getIdUsuario() {
@@ -179,10 +184,18 @@ public class Usuario {
 		this.municipio = municipio;
 	}
 
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(apellidoMaterno, apellidoPaterno, direccion, email, estado, idUsuario, municipio, nombre,
-				pais, password, rfc, telefono, tipoUsuario);
+				pais, password, pedidos, rfc, telefono, tipoUsuario);
 	}
 
 	@Override
@@ -199,8 +212,9 @@ public class Usuario {
 				&& Objects.equals(email, other.email) && Objects.equals(estado, other.estado)
 				&& idUsuario == other.idUsuario && Objects.equals(municipio, other.municipio)
 				&& Objects.equals(nombre, other.nombre) && Objects.equals(pais, other.pais)
-				&& Objects.equals(password, other.password) && Objects.equals(rfc, other.rfc)
-				&& Objects.equals(telefono, other.telefono) && Objects.equals(tipoUsuario, other.tipoUsuario);
+				&& Objects.equals(password, other.password) && Objects.equals(pedidos, other.pedidos)
+				&& Objects.equals(rfc, other.rfc) && Objects.equals(telefono, other.telefono)
+				&& Objects.equals(tipoUsuario, other.tipoUsuario);
 	}
 
 	@Override
@@ -208,7 +222,8 @@ public class Usuario {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", apellidoMaterno=" + apellidoMaterno
 				+ ", apellidoPaterno=" + apellidoPaterno + ", email=" + email + ", password=" + password + ", telefono="
 				+ telefono + ", direccion=" + direccion + ", rfc=" + rfc + ", tipoUsuario=" + tipoUsuario + ", pais="
-				+ pais + ", estado=" + estado + ", municipio=" + municipio + "]";
+				+ pais + ", estado=" + estado + ", municipio=" + municipio + ", pedidos=" + pedidos + "]";
 	}
 
+	
 }

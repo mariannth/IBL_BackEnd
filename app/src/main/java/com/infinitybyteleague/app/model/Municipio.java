@@ -1,6 +1,9 @@
 package com.infinitybyteleague.app.model;
 
+import java.util.List;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -17,16 +20,21 @@ public class Municipio {
     private String nombreMunicipio;
 
     @ManyToOne
-    @JoinColumn(name = "estados_id_estados", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "estados_id_estados")
     private Estado estado;
+
+    @OneToMany(mappedBy = "municipio", cascade = CascadeType.ALL)
+    private List<Usuario> usuarios;
 
     public Municipio() {}
 
-	public Municipio(int idMunicipio, String nombreMunicipio, Estado estado) {
+	public Municipio(int idMunicipio, String nombreMunicipio, Estado estado, List<Usuario> usuarios) {
 		super();
 		this.idMunicipio = idMunicipio;
 		this.nombreMunicipio = nombreMunicipio;
 		this.estado = estado;
+		this.usuarios = usuarios;
 	}
 
 	public int getIdMunicipio() {
@@ -53,9 +61,17 @@ public class Municipio {
 		this.estado = estado;
 	}
 
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(estado, idMunicipio, nombreMunicipio);
+		return Objects.hash(estado, idMunicipio, nombreMunicipio, usuarios);
 	}
 
 	@Override
@@ -68,13 +84,13 @@ public class Municipio {
 			return false;
 		Municipio other = (Municipio) obj;
 		return Objects.equals(estado, other.estado) && idMunicipio == other.idMunicipio
-				&& Objects.equals(nombreMunicipio, other.nombreMunicipio);
+				&& Objects.equals(nombreMunicipio, other.nombreMunicipio) && Objects.equals(usuarios, other.usuarios);
 	}
 
 	@Override
 	public String toString() {
 		return "Municipio [idMunicipio=" + idMunicipio + ", nombreMunicipio=" + nombreMunicipio + ", estado=" + estado
-				+ "]";
+				+ ", usuarios=" + usuarios + "]";
 	}
 
 	
